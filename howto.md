@@ -61,8 +61,6 @@ location / {
 
 ### fail2ban block 444,404,401
 
-``` sudo nano /etc/fail2ban/jail.local ```
-
 ```   sudo nano /etc/fail2ban/filter.d/nuker.conf ```
 
 ```
@@ -79,7 +77,7 @@ ignoreregex = ^<HOST>*.*USERNEMR*.*200*
             # ^<HOST>.-.-.*.*.*.*.*domain.com*
 ```
 
-` sudo systemctl restart fail2ban.service `
+``` sudo nano /etc/fail2ban/jail.local ```
 
 ```
 [nuker]
@@ -91,6 +89,10 @@ bantime = 600d
 maxretry  = 1
 findtime  = 10
 ```
+
+
+` sudo systemctl restart fail2ban.service `
+
 
 ## ssh block attempts
 
