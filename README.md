@@ -3,8 +3,8 @@ Basic Oracle Security and Codes for Free Instances | Should be accessible via or
 
 ## to-do
 
-add stuff todo 
-
 - [ ] Create bash script
 - [ ] ... docker stuff
- 
+- [ ] host on oracle, on ora-cle.duckdns
+
+
