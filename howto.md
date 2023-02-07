@@ -34,7 +34,6 @@ sudo iptables -I INPUT -p tcp -m tcp --dport 7878 -j ACCEPT
 sudi -i
 sudo echo "Port 2523" >> /etc/ssh/sshd_config
 sudo systemctl restart sshd
-
 ```
 
 change ssh port 
@@ -42,4 +41,17 @@ change ssh port
 
 ```
 sudo systemctl restart sshd
+```
+
+### nginx block ip access
+```
+sudo nano /etc/nginx/sites-enabled/default 
+```
+```
+location / {
+    return 444 https://$host$request_uri;
+  }
+  if ($host != "domain.com") {
+  return 444;
+  }
 ```
