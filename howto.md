@@ -55,3 +55,33 @@ location / {
   return 444;
   }
 ```
+
+
+### fail2ban block 444,404,401
+
+```   sudo nano /etc/fail2ban/filter.d/nuker.conf ```
+```
+[Definition] 
+failregex = ^<HOST>.-.-.*.*.444.*
+            ^<HOST>.-.-.*.*.404.*
+            ^<HOST>.-.-.*.*.400.*
+            ^<HOST>*.*USERNAME*.*401*
+           
+ignoreregex = ^<HOST>*.*USERNEMR*.*200*
+             ^<HOST>*.*USERNAME*.*
+             ^<HOST>.-.-.*.*.200.*
+             ^<HOST>.-.-.*.*.302.* 
+            # ^<HOST>.-.-.*.*.*.*.*domain.com*
+```
+
+
+```
+[nuker]
+enabled  = true
+port    = http,https
+filter   = caddy404
+logpath = /var/log/nginx/access.log
+bantime = 600d
+maxretry  = 1
+findtime  = 10
+```
