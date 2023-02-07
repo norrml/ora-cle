@@ -3,6 +3,8 @@ Basic Oracle Security and Codes for Free Instances | Should be accessible via or
 
 ## to-do
 
- [ ] Create bash script
- [ ] ... docker stuff
+add stuff todo 
+
+- [ ] Create bash script
+- [ ] ... docker stuff
  
