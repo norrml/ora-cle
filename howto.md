@@ -2,7 +2,7 @@
 ```
 sudo apt update && sudo apt upgrade -y 
 sudo apt install netfilter-persistent
-sudo iptables -I INPUT -p tcp -m tcp --dport 2523 -j ACCEPT
+sudo iptables -I INPUT -p tcp -m tcp --dport 2221 -j ACCEPT
 sudo netfilter-persistent save
 sudo timedatectl set-timezone Asia/Iraq
 ```
@@ -11,7 +11,7 @@ sudo timedatectl set-timezone Asia/Iraq
 
 ```
 sudo -i
-sudo echo "Port 2523" >> /etc/ssh/sshd_config
+sudo echo "Port 2221" >> /etc/ssh/sshd_config
 sudo systemctl restart sshd
 ```
 
@@ -37,7 +37,7 @@ screen -ls  # list task name
 sudo iptables -I INPUT -p tcp -m tcp --dport 51820-j ACCEPT
 sudo iptables -I INPUT -p tcp -m tcp --dport 2400 -j ACCEPT
 sudo iptables -I INPUT -p tcp -m tcp --dport 32400 -j ACCEPT
-sudo iptables -I INPUT -p tcp -m tcp --dport 2523 -j ACCEPT
+sudo iptables -I INPUT -p tcp -m tcp --dport 2221 -j ACCEPT
 sudo iptables -I INPUT -p tcp -m tcp --dport 443 -j ACCEPT
 sudo iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 sudo iptables -I INPUT -p tcp -m tcp --dport 8989 -j ACCEPT
@@ -102,7 +102,7 @@ set sshd.conf to aggressive in jail.local
 [sshd]
 enabled  = true
 mode = aggressive
-port    = ssh,2523   #change port
+port    = ssh,2221   #change port
 logpath = %(sshd_log)s
 backend = %(sshd_backend)s
 bantime = 60d
