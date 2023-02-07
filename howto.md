@@ -7,6 +7,22 @@ sudo netfilter-persistent save
 sudo timedatectl set-timezone Asia/Iraq
 ```
 
+## ssh change port
+
+```
+sudo -i
+sudo echo "Port 2523" >> /etc/ssh/sshd_config
+sudo systemctl restart sshd
+```
+
+change ssh port 
+`sudo nano /etc/ssh/sshd_config`
+
+```
+sudo systemctl restart sshd
+```
+
+
 ### Screen
 ```
 screen -S taskname #start new putty withtaskname
@@ -28,20 +44,6 @@ sudo iptables -I INPUT -p tcp -m tcp --dport 8989 -j ACCEPT
 sudo iptables -I INPUT -p tcp -m tcp --dport 7878 -j ACCEPT
 ```
 
-## ssh change port
-
-```
-sudi -i
-sudo echo "Port 2523" >> /etc/ssh/sshd_config
-sudo systemctl restart sshd
-```
-
-change ssh port 
-`sudo nano /etc/ssh/sshd_config`
-
-```
-sudo systemctl restart sshd
-```
 
 ### nginx block ip access
 ```
